@@ -1,0 +1,357 @@
+<mvc:View
+    controllerName="com.sap.updatefpmasterdata.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:uxap="sap.uxap"
+    xmlns:core="sap.ui.core"
+    xmlns:semantic="sap.f.semantic"
+    xmlns:u="sap.ui.unified"
+    xmlns:f="sap.ui.layout.form"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <uxap:ObjectPageLayout
+                id="ObjectPageLayout"
+                upperCaseAnchorBar="false"
+                showAnchorBar="true"
+                enableLazyLoading="true"
+                
+            >
+                <uxap:sections>
+                    <uxap:ObjectPageSection
+                        id="_IDGenObjectPageSection1"
+                        showTitle="false"
+                    >
+                        <uxap:subSections>
+                            <uxap:ObjectPageSubSection
+                                id="_IDGenObjectPageSubSection1"
+                                title="General Info"
+                            >
+                                <uxap:blocks>
+                                    <VBox width="100%">
+                                        <HBox
+                                            width="50%"
+                                            alignItems="Center"
+                                        >
+                                            <Label
+                                                id="_IDGenLabel7"
+                                                text="Directorate :"
+                                                class="aaa"
+                                            />
+
+                                            <ComboBox
+                                                id="_IDGenComboBox1"
+                                                items="{dModel>/}"
+                                            >
+                                                <core:Item
+                                                    id="_IDGenItem1"
+                                                    text="{dModel>text}"
+                                                    key="{dModel>text}"
+                                                />
+                                            </ComboBox>
+                                        </HBox>
+                                        <HBox
+                                            width="50%"
+                                            alignItems="Center"
+                                        >
+                                            <Label
+                                                id="_IDGenLabel78"
+                                                text="User Department :"
+                                                class="bbb"
+                                            />
+                                            <ComboBox
+                                                id="_IDGenComboBox13"
+                                                items="{dModel>/}"
+                                            >
+                                                <core:Item
+                                                    id="_IDGenItem14"
+                                                    text="{dModel>text}"
+                                                    key="{dModel>text}"
+                                                />
+                                            </ComboBox>
+                                        </HBox>
+                                    </VBox>
+                                </uxap:blocks>
+                            </uxap:ObjectPageSubSection>
+                            <uxap:ObjectPageSubSection
+                                id="_IDGenObjectPageSubSection2"
+                                title="Add New Focal Point"
+                            >
+                                <uxap:blocks>
+                                    <HBox
+                                        width="50%"
+                                        justifyContent="SpaceAround"
+                                    >
+                                        <VBox width="88%">
+                                            <!-- Added label for New section -->
+                                            <Label
+                                                id="_IDGenLabel25"
+                                                text="Selected Focal Point"
+                                            />
+                                            <Select
+                                                id="Select1112"
+                                                change="onSelectChangee"
+                                                items="{sModel>/}"
+                                                width="300px"
+                                            >
+                                                <items>
+                                                    <core:Item
+                                                        id="_IDGenItem1245"
+                                                        key="{sModel>text}"
+                                                        text="{sModel>text}"
+                                                    />
+                                                </items>
+                                            </Select>
+                                            <Label
+                                                id="_IDGenLabel512"
+                                                text="Focal Point Name"
+                                            />
+                                            <Input
+                                                id="_IDGenInput511"
+                                                value="Danara"
+                                                width="19rem"
+                                            />
+
+                                            <Label
+                                                id="_IDGenLabel611"
+                                                text="Email Address"
+                                            />
+                                            <Input
+                                                id="_IDGenInput111"
+                                                value="danara@kpo.kz"
+                                                width="19rem"
+                                            />
+                                        </VBox>
+                                    </HBox>
+                                </uxap:blocks>
+                            </uxap:ObjectPageSubSection>
+                            <uxap:ObjectPageSubSection
+                                id="_IDGenObjectPageSubSection"
+                                title="Update Current Focal Point"
+                            >
+                                <uxap:blocks>
+                                    <HBox
+                                        width="50%"
+                                        justifyContent="SpaceAround"
+                                    >
+                                        <!-- Old Focal Point Section -->
+                                        <VBox>
+                                            <Text
+                                                text="Old"
+                                                class="old"
+                                            />
+                                            <!-- Added label for Old section -->
+                                            <Label
+                                                id="_IDGenLabel35"
+                                                text="Selected Focal Point"
+                                            />
+                                            <Select
+                                                id="Select12"
+                                                change="onSelectChange"
+                                                items="{sModel>/}"
+                                                width="300px"
+                                            >
+                                                <items>
+                                                    <core:Item
+                                                        id="_IDGenItem1234"
+                                                        key="{sModel>text}"
+                                                        text="{sModel>text}"
+                                                    />
+                                                </items>
+                                            </Select>
+                                            <Label
+                                                id="_IDGenLabel5"
+                                                text="Focal Point Name"
+                                            />
+                                            <Input
+                                                id="_IDGenInput5"
+                                                value="{oModel>/0/focalPointname}"
+                                                editable="false"
+                                            />
+
+                                            <Label
+                                                id="_IDGenLabel6"
+                                                text="Email Address"
+                                            />
+                                            <Input
+                                                id="_IDGenInput1"
+                                                value="{oModel>/0/emailAddress}"
+                                                editable="false"
+                                            />
+                                        </VBox>
+
+                                        <!-- New Focal Point Section -->
+                                        <VBox>
+                                            <Label
+                                                text="New"
+                                                class="old"
+                                            />
+                                            <!-- Added label for New section -->
+                                            <Label
+                                                id="_IDGenLabel325"
+                                                text="Selected Focal Point"
+                                            />
+                                            <Select
+                                                id="Select112"
+                                                change="onSelectChange"
+                                                items="{sModel>/}"
+                                                width="300px"
+                                            >
+                                                <items>
+                                                    <core:Item
+                                                        id="_IDGenItem12345"
+                                                        key="{sModel>text}"
+                                                        text="{sModel>text}"
+                                                    />
+                                                </items>
+                                            </Select>
+                                            <Label
+                                                id="_IDGenLabel52"
+                                                text="Focal Point Name"
+                                            />
+                                            <Input
+                                                id="_IDGenInput51"
+                                                value="{oModel>/1/focalPointname}"
+                                            />
+
+                                            <Label
+                                                id="_IDGenLabel61"
+                                                text="Email Address"
+                                            />
+                                            <Input
+                                                id="_IDGenInput11"
+                                                value="{oModel>/1/emailAddress}"
+                                            />
+                                        </VBox>
+                                    </HBox>
+                                </uxap:blocks>
+                            </uxap:ObjectPageSubSection>
+
+                            <uxap:ObjectPageSubSection
+                                id="_IDGenObjectPageSubSection12"
+                                title="Delete Focal Point"
+                            >
+                                <uxap:blocks>
+                                    <Table
+                                        id="itemsTableUpdated"
+                                        inset="false"
+                                        items=""
+                                        mode="MultiSelect"
+                                        fixedLayout="false"
+                                        class="bg"
+                                    >
+                                        <headerToolbar>
+                                            <OverflowToolbar
+                                                id="_IDGenOverflowToolbarUpdated"
+                                            >
+                                                <Title
+                                                    id="_IDGenTitleUpdated"
+                                                    text=""
+                                                />
+                                                <ToolbarSpacer
+                                                    id="_IDGenToolbarSpacerUpdated"
+                                                />
+                                                <Button
+                                                    id="_IDGenButtonDelete"
+                                                    icon="sap-icon://delete"
+                                                    press="onDeleteItemPress"
+                                                />
+                                            </OverflowToolbar>
+                                        </headerToolbar>
+                                        <columns>
+                                            <Column id="itemColumn1Updated">
+                                                <Text
+                                                    id="itemIdColumnHeaderUpdated"
+                                                    text="Focal Point Type"
+                                                />
+                                            </Column>
+
+                                            <Column id="itemColumn2Updated">
+                                                <Text
+                                                    id="materialNumColumnHeaderUpdated"
+                                                    text="Focal Point Name"
+                                                />
+                                            </Column>
+
+                                            <Column id="itemColumn3Updated">
+                                                <Text
+                                                    id="materialDescColumnHeaderUpdated"
+                                                    text="Email Address"
+                                                />
+                                            </Column>
+                                        </columns>
+
+                                        <items>
+                                            <ColumnListItem id="itemRowUpdated">
+                                                <cells>
+                                                    <Input
+                                                        id="_IDGenInput4Updated"
+                                                        value="Primary"
+                                                        editable="false"
+                                                    />
+
+                                                    <Input
+                                                        id="_IDGenInput5Updated"
+                                                        value="Danara"
+                                                        editable="false"
+                                                    />
+
+                                                    <Input
+                                                        id="_IDGenInput8Updated"
+                                                        value="danara@kpo.kz"
+                                                        editable="false"
+                                                    />
+                                                </cells>
+                                            </ColumnListItem>
+                                        </items>
+                                    </Table>
+                                </uxap:blocks>
+                            </uxap:ObjectPageSubSection>
+                        </uxap:subSections>
+                    </uxap:ObjectPageSection>
+                </uxap:sections>
+            </uxap:ObjectPageLayout>
+        </content>
+        <footer>
+            <Bar id="bar">
+                <contentLeft>
+                    <Button
+                        id="popover"
+                        icon="sap-icon://message-popup"
+                        text="{=${message>/}.length}"
+                        type="Reject"
+                        press="handleErrorMessagePopoverPress"
+                        visible="false"
+                    />
+                </contentLeft>
+                <contentRight>
+                    <Button
+                        text="Save"
+                        tooltip="Create"
+                        press="onSave"
+                        id="Save"
+                        visible="true"
+                    />
+                    <Button
+                        text="Submit"
+                        tooltip="Create"
+                        press="onSubmit"
+                        id="Submit"
+                        visible="true"
+                    />
+                    <Button
+                        text="Cancel"
+                        tooltip="Cancel"
+                        press="onCancel"
+                        id="Cancel"
+                        visible="true"
+                    />
+                </contentRight>
+            </Bar>
+        </footer>
+    </Page>
+</mvc:View>
